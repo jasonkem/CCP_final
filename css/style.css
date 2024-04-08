@@ -1,0 +1,465 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #007BFF;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.nav-link {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.nav-link.active {
+    color: #FF0000;
+    background-color: black;
+    font-weight: bold;
+}
+
+.nav-link.active, .nav-link:hover {
+    background-color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+nav ul li a.active {
+    color: red;
+    font-weight: bold;
+}
+
+.ipad-view-indicator {
+    display: none;
+}
+
+@keyframes flashBackground {
+    0% { background-color: black; }
+    50% { background-color: transparent; }
+    100% { background-color: black; }
+}
+
+.stripes p {
+    font-size: 46px;
+    color: black;
+}
+
+.stripes {
+    background-image: repeating-linear-gradient(
+        90deg,
+        rgba(255, 203, 5, 0.5) 0px,
+        rgba(255, 203, 5, 0.5) 40px,
+        transparent 40px,
+        transparent 80px
+    ),
+    repeating-linear-gradient(
+        0deg,
+        rgba(255, 203, 5, 0.5) 0px,
+        rgba(255, 203, 5, 0.5) 40px,
+        transparent 40px,
+        transparent 80px
+    ),
+    linear-gradient(90deg, hsl(240, 100%, 50%), hsl(240, 100%, 50%));
+}
+
+
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    z-index: -999;
+}
+
+.skip-link:focus {
+    left: 0;
+    top: 0;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    z-index: 9999;
+    background-color: #FFF;
+    padding: 10px;
+    margin: 10px;
+}
+
+nav ul {
+    padding: 0;
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: white;
+    padding: 8px 12px;
+    background-color:black;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover, .nav-link.active {
+    background-color: black;
+}
+
+main {
+    padding: 20px;
+    text-align: left;
+}
+
+main img {
+    max-width: 25%;
+    height: auto;
+}
+
+main section img {
+    height: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+
+main section p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+
+.test {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.test img {
+    flex: 0 1 25%;
+    height: auto;
+}
+
+.test img:hover {
+    transform: scale(1.05); 
+}
+
+
+
+@media screen and (min-width: 482px) {
+    .ipad-view-indicator {
+        color: red;
+        font-weight: bold;
+        position:absolute;
+        top: 10px;
+        left: 100px;
+        background-color: rgba(255, 255, 255, 0.7);
+        padding: 5px;
+        border-radius: 5px;
+        z-index: 1000;
+        display: block;
+        animation: flashBackground 2s infinite;
+    }
+
+    body, nav ul li a, header h1, main h2, main h3, main p, main ul li {
+        font-size: 20px; 
+    }
+
+    nav ul li a {
+        font-size: 18px; 
+    }
+
+    nav ul li a, .skip-link {
+        padding: 15px 20px;
+        margin: 0 5px;
+    }
+
+    header {
+        padding: 30px 0;
+    }
+
+    main section p {
+        padding: 10px;
+    }
+
+    .test {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .test img {
+        flex: 0 1 50%;
+        max-width: 50%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    main section img {
+        max-width: 95%; 
+        margin-top: 30px; 
+    }
+
+
+    nav {
+        padding: 20px 0;
+    }
+
+    nav ul {
+        justify-content: center;
+        padding: 0 20px;
+    }
+
+
+    body, header h1, main h2, main h3, main p, main ul li {
+        line-height: 1.8;
+    }
+
+    main > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    main section img {
+        margin-top: 30px;
+        max-width: 95%;
+        display: block;
+    }
+
+}
+
+
+@media screen and (min-width: 481px) {
+    body {
+        font-size: 14px;
+        background-color: #e7e7e7;
+    }
+
+    header {
+        padding: 15px 5px;
+    }
+
+    nav ul {
+        padding: 0;
+    }
+
+    nav ul li {
+        display: block;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: white;
+        background-color: #333;
+        margin-bottom: 2px; 
+    }
+
+    .nav-link:hover, .nav-link.active {
+        background-color: #555;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    .test {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    .test img {
+        flex: 0 1 33.333%;
+        max-width: 33.333%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+    
+    .test img:last-child {
+        flex: 0 1 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .skip-link {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #FFF;
+        color: #000;
+        padding: 10px;
+        z-index: 100;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        color: #333;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        background-color: #007BFF;
+        color: #ffffff;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .nav-link {
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .nav-link.active {
+        color: #FF0000;
+        font-weight: bold;
+    }
+
+    .nav-link.active, .nav-link:hover {
+        background-color: black;
+        padding: 5px 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    nav ul li a.active {
+        color: red;
+        font-weight: bold;
+    }
+
+    .ipad-view-indicator {
+        display: none;
+    }
+
+    .stripes p {
+        font-size: 46px;
+        color: black;
+    }
+
+    .stripes {
+        background-image: repeating-linear-gradient(
+            90deg,
+            rgba(255, 203, 5, 0.5) 0px,
+            rgba(255, 203, 5, 0.5) 40px,
+            transparent 40px,
+            transparent 80px
+        ),
+        repeating-linear-gradient(
+            0deg,
+            rgba(255, 203, 5, 0.5) 0px,
+            rgba(255, 203, 5, 0.5) 40px,
+            transparent 40px,
+            transparent 80px
+        ),
+        linear-gradient(90deg, hsl(240, 100%, 50%), hsl(240, 100%, 50%));
+    }
+
+    .skip-link {
+        position: absolute;
+        left: -999px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        z-index: -999;
+    }
+
+    .skip-link:focus {
+        left: 0;
+        top: 0;
+        width: auto;
+        height: auto;
+        overflow: visible;
+        z-index: 9999;
+        background-color: #FFF;
+        padding: 10px;
+        margin: 10px;
+    }
+
+    nav ul {
+        padding: 0;
+        list-style: none;
+    }
+
+    nav ul li {
+        display: inline;
+        margin-right: 10px;
+    }
+
+    nav ul li a {
+        color: white;
+        padding: 8px 12px;
+        background-color: black;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    nav ul li a:hover, .nav-link.active {
+        background-color: black;
+    }
+
+    main {
+        padding: 20px;
+        text-align: left;
+    }
+
+    main img {
+        max-width: 25%;
+        height: auto;
+    }
+
+    main section img {
+        height: auto;
+        margin-top: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    main section p {
+        font-size: 18px;
+        color: #333;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .test {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        justify-content: center; 
+        gap: 20px; 
+        padding: 20px;
+        border: 2px solid #007BFF; 
+        border-radius: 10px; 
+        margin: auto; 
+        max-width: 600px;
+    }
+
+    .test img {
+        flex: 0 1 25%;
+        height: auto;
+    }
+
+    .test img:hover {
+        transform: scale(1.05);
+    }
+}
